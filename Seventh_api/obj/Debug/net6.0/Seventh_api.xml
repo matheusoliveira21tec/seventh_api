@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Seventh_api</name>
+    </assembly>
+    <members>
+        <member name="M:Seventh_api.Controllers.ServidorController.GetServidores">
+            <summary>
+            Recupera todos os servidores
+            </summary>
+            <returns>OK</returns>
+            <returns>BadRequest</returns>
+            <response code="200">Caso obtenção seja feita com sucesso</response>
+            <response code="400">Caso não exista nenhum servidor</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.ServidorController.CreateServidor(Seventh_api.Dtos.Servidores.CreateServidorDto)">
+            <summary>
+            Adiciona um servidor ao banco de dados
+            </summary>
+            <param name="servidorDto">Objeto com os campos necessários para criação de um servidor</param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.ServidorController.GetServidor(System.Guid)">
+            <summary>
+            Recupera um servidor
+            </summary>
+            <param name="servidorId">ID do servidor a ser buscado</param>
+            <returns>OK</returns>
+            <returns>BadRequest</returns>
+            <response code="200">Caso obtenção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.ServidorController.AvailableServidor(System.Guid)">
+            <summary>
+            Retorna se um servidor está disponível
+            </summary>
+            <param name="servidorId">ID do servidor a ser verificado</param>
+            <returns>OK</returns>
+            <returns>BadRequest</returns>
+            <response code="200">Caso verificação seja feita com sucesso, true para disponível e false para indisponível</response>
+            <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.ServidorController.PutServidor(System.Guid,Seventh_api.Dtos.Servidores.UpdateServidorDto)">
+            <summary>
+            Atualiza um servidor
+            </summary>
+            <param name="servidorId">ID do servidor a ser buscado</param>
+            <param name="servidorDto">Objeto com os campos necessários para atualização de um servidor</param>
+            <returns>BadRequest</returns>
+            <returns>NoContent</returns>
+            <response code="204">Caso obtenção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.ServidorController.RemoveServidor(System.Guid)">
+            <summary>
+            Deleta um servidor
+            </summary>
+            <param name="servidorId">ID do servidor a ser buscado</param>
+            <returns>BadRequest</returns>
+            <returns>NoContent</returns>
+            <response code="204">Caso exclusão seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="T:Seventhapi.Migrations.CriandoTabelaSeventh">
+            <inheritdoc />
+        </member>
+        <member name="M:Seventhapi.Migrations.CriandoTabelaSeventh.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Seventhapi.Migrations.CriandoTabelaSeventh.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Seventhapi.Migrations.CriandoTabelaSeventh.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
