@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Seventh_api.Dtos.Videos;
+﻿namespace Seventh_api.Dtos.Videos;
 
 public class ReadVideoDto
 {

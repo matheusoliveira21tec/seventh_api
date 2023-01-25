@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Seventh_api.Data;
 using Seventh_api.Dtos.Servidores;
@@ -31,7 +30,7 @@ public class ServidorController : ControllerBase
     public ActionResult<IEnumerable<ReadServidorDto>> GetServidores()
     {
         var servidores = _repository.GetAllServidores();
-        if(servidores == null) return BadRequest();
+        if (servidores == null) return BadRequest();
         return Ok(_mapper.Map<IEnumerable<ReadServidorDto>>(servidores));
     }
     /// <summary>
@@ -98,7 +97,7 @@ public class ServidorController : ControllerBase
     [HttpPut("api/servers/{servidorId}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult PutServidor(Guid servidorId,
+    public IActionResult UpdateServidor(Guid servidorId,
 [FromBody] UpdateServidorDto servidorDto)
     {
         var servidor = _repository.GetServidor(servidorId);

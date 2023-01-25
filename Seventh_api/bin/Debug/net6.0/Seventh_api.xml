@@ -41,7 +41,7 @@
             <response code="200">Caso verificação seja feita com sucesso, true para disponível e false para indisponível</response>
             <response code="400">Caso não exista servidor com o id passado</response>
         </member>
-        <member name="M:Seventh_api.Controllers.ServidorController.PutServidor(System.Guid,Seventh_api.Dtos.Servidores.UpdateServidorDto)">
+        <member name="M:Seventh_api.Controllers.ServidorController.UpdateServidor(System.Guid,Seventh_api.Dtos.Servidores.UpdateServidorDto)">
             <summary>
             Atualiza um servidor
             </summary>
@@ -61,6 +61,80 @@
             <returns>NoContent</returns>
             <response code="204">Caso exclusão seja feita com sucesso</response>
             <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.CreateVideo(System.Guid,Seventh_api.Dtos.Videos.CreateVideoDto)">
+            <summary>
+            Adiciona um video a um servidor
+            </summary>
+            <param name="servidorId">Id do servidor em que sera criado o video</param>
+            <param name="videoDto">Objeto com os campos necessários para criação de um video</param>
+            <returns>IActionResult</returns>
+            <returns>BadRequest</returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.DeleteVideo(System.Guid,System.Guid)">
+            <summary>
+            Remove um video a um servidor
+            </summary>
+            <param name="servidorId">Id do servidor em que será removido o video</param>
+            <param name="videoId">Id do video que será removido</param>
+            <returns>NoContent</returns>
+            <returns>BadRequest</returns>
+            <response code="204">Caso remoção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor ou video com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.RecyclerVideosAsync(System.Int32)">
+            <summary>
+            Remove os vídeo adicionados a mais de X dias, incluindo o conteúdo binário do vídeo.
+            </summary>
+            <param name="days">Numero de dias para excluir videos</param>
+            <returns>Accepted</returns>
+            <response code="202">Solicitação aceita</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.GetVideo(System.Guid,System.Guid)">
+            <summary>
+            Recupera um video de um servidor
+            </summary>
+            <param name="servidorId">Id do servidor em que será recuperado o video</param>
+            <param name="videoId">Id do video que será recuperado</param>
+            <returns>Ok</returns>
+            <returns>BadRequest</returns>
+            <response code="200">Caso obtenção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor ou video com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.GetBinary(System.Guid,System.Guid)">
+            <summary>
+            Recupera os dados binarios de um video
+            </summary>
+            <param name="servidorId">Id do servidor em que serão recuperados os dados binarios</param>
+            <param name="videoId">Id do video que serão recuperados os dados binarios</param>
+            <returns>OK</returns>
+            <returns>BadRequest</returns>
+            <response code="200">Caso obtenção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor ou video com o id passado</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.GetStatus">
+            <summary>
+            Recupera o status da reciclagem
+            </summary>
+            <returns>OK</returns>
+            <response code="200">Caso obtenção seja feita com sucesso</response>
+        </member>
+        <member name="M:Seventh_api.Controllers.VideoController.GetVideos(System.Guid)">
+            <summary>
+            Recupera todos os videos de um servidor
+            </summary>
+            <param name="servidorId">Id do servidor em que será recuperado o video</param>
+            <returns>NoContent</returns>
+            <returns>BadRequest</returns>
+            <response code="200">Caso obtenção seja feita com sucesso</response>
+            <response code="400">Caso não exista servidor com o id passado</response>
+        </member>
+        <member name="P:Seventh_api.Services.Singleton.Status">
+            <summary>
+            Propriedade para o Status de operação
+            </summary>
         </member>
         <member name="T:Seventhapi.Migrations.CriandoTabelaSeventh">
             <inheritdoc />

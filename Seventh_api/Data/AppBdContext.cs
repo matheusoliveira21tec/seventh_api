@@ -1,5 +1,5 @@
-﻿using Seventh_api.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Seventh_api.Models;
 
 namespace Seventh_api.Data
 {
